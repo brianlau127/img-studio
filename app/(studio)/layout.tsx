@@ -14,14 +14,18 @@
 
 'use client'
 
-import TopNav from '../ui/transverse-components/SideNavigation'
+import TopNav from '../ui/components/TopNavigation' // Example path
 import Box from '@mui/material/Box'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Box sx={{ display: 'flex' }}>
+    // Change flex-direction to arrange children vertically
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <TopNav />
-      {children}
+      {/* The main content area will now naturally fall below the TopNav */}
+      <Box component="main" sx={{ p: 3 }}>
+        {children}
+      </Box>
     </Box>
   )
 }
