@@ -36,7 +36,7 @@ export default function TopNav() {
 
   return (
     // Use AppBar for a top navigation bar. `position="static"` makes it part of the document flow.
-    <AppBar position="static" sx={{ background: palette.background.paper }}>
+    <AppBar position="sticky" sx={{ background: palette.background.paper }}>
       <Toolbar>
         {/* Logo */}
         <Image priority src={icon} width={200} alt="ImgStudio" />
