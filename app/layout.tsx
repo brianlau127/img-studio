@@ -24,7 +24,7 @@ import './globals.css'
 
 // --- Step 1: Import Box and your new TopNav component ---
 import { Box } from '@mui/material'
-import TopNav from './components/TopNav' // Adjust this path if your component is elsewhere
+import TopNav from './ui/transverse-components/SideNavigation' // Adjust this path if your component is elsewhere
 
 export const metadata = {
   title: 'ImgStudio',
