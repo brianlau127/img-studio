@@ -21,7 +21,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { AppBar, Toolbar, Stack, Typography, Button, Box } from '@mui/material'
 
 import Image from 'next/image'
-import icon from '../../../public/ImgStudioLogoReversedMini.svg'
+import icon from '../../../public/cropped-Admazes-logo_white.png'
 import { pages } from '../../routes'
 import theme from '../../theme'
 
@@ -31,14 +31,16 @@ export default function TopNav() {
   const router = useRouter()
   const pathname = usePathname()
 
-  // The 'open' state is no longer needed for a static top bar
-  // const [open, setOpen] = useState(true)
-
   return (
-    // Use AppBar for a top navigation bar. `position="static"` makes it part of the document flow.
     <AppBar position="sticky" sx={{ background: palette.background.paper }}>
-      <Toolbar>
+      {/* 
+        THIS IS THE LINE TO MODIFY.
+        Add the `sx` prop to the Toolbar to control the height.
+        The default is around 64px on desktop. Let's make it taller.
+      */}
+      <Toolbar sx={{ minHeight: '90px' }}> 
         {/* Logo */}
+        {/* You may need to adjust your logo's size to fit the new height */}
         <Image priority src={icon} width={200} alt="ImgStudio" />
 
         {/* This is a spacer that pushes the navigation links to the right */}
