@@ -117,7 +117,13 @@ export const GenerateImageFormFields = {
     label: 'Aspect ratio',
     type: 'chip-group',
     default: '1:1',
-    options: ['1:1', '9:16', '16:9', '3:4', '4:3'],
+    options: ['1:1', '9:16', '16:9', '3:4', '4:3','6:5',
+    '4:15',
+    '1:2',
+    '728:90',
+    '970:90',
+    '970:250',
+    '320:100'],
     isDataResetable: false,
     isFullPromptAdditionalField: false,
   },
@@ -523,6 +529,13 @@ export const RatioToPixel = [
   { ratio: '16:9', width: 1408, height: 768 },
   { ratio: '3:4', width: 896, height: 1280 },
   { ratio: '4:3', width: 1280, height: 896 },
+  { ratio: '6:5', width: 300, height: 250 },
+  { ratio: '4:15', width: 160, height: 600 },
+  { ratio: '1:2', width: 300, height: 600 },
+  { ratio: '728:90', width: 728, height: 90 },
+  { ratio: '970:90', width: 970, height: 90 },
+  { ratio: '970:250', width: 970, height: 250 },
+  { ratio: '320:100', width: 320, height: 100 },
 ]
 
 // Random prompt list the user can use if they lack prompt ideas
