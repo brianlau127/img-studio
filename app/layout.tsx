@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// ./app/layout.tsx
-
 import * as React from 'react'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { ThemeProvider } from '@mui/material/styles'
@@ -21,10 +19,6 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from './theme'
 import { ContextProvider } from './context/app-context'
 import './globals.css'
-
-// --- Step 1: Import Box and your new TopNav component ---
-import { Box } from '@mui/material'
-import TopNav from './ui/transverse-components/SideNavigation' // Adjust this path if your component is elsewhere
 
 export const metadata = {
   title: 'ImgStudio',
@@ -41,28 +35,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <ContextProvider>
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <ThemeProvider theme={theme}>
-              {/* CssBaseline resets browser styles, keep it here */}
               <CssBaseline />
-
-              {/* --- Step 2: Create the main layout container --- */}
-              <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                
-                {/* --- Step 3: Place your TopNav component here --- */}
-                <TopNav />
-
-                {/* --- Step 4: Create the main content area that will grow to fill space --- */}
-                <Box
-                  component="main" // Use a <main> tag for semantic HTML
-                  sx={{
-                    flexGrow: 1, // This makes the main content area expand
-                    p: 3,        // Adds some padding around your page content
-                  }}
-                >
-                  {/* Your page content will be rendered here */}
-                  {props.children}
-                </Box>
-              </Box>
-
+              {props.children}
             </ThemeProvider>
           </AppRouterCacheProvider>
         </ContextProvider>
