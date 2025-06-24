@@ -25,9 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <TopNav />
       {/* The main content area is still full-width */}
       <Box component="main" sx={{ p: 3 }}>
-        {/* 2. Wrap children in a Container */}
-        {/* maxWidth can be 'xs', 'sm', 'md', 'lg', 'xl', or false */}
-        <Container maxWidth="lg">
+        <Container maxWidth="false">
           {children}
         </Container>
       </Box>
