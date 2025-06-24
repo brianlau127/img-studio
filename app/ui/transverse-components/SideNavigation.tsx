@@ -33,20 +33,16 @@ export default function TopNav() {
 
   return (
     <AppBar position="sticky" sx={{ background: palette.background.paper }}>
-      {/* 
-        THIS IS THE LINE TO MODIFY.
-        Add the `sx` prop to the Toolbar to control the height.
-        The default is around 64px on desktop. Let's make it taller.
-      */}
+      
       <Toolbar sx={{ minHeight: '150px' }}> 
-        {/* Logo */}
-        {/* You may need to adjust your logo's size to fit the new height */}
+ 
+        
         <Image priority src={icon} width={300} alt="ImgStudio" />
 
-        {/* This is a spacer that pushes the navigation links to the right */}
+        
         <Box sx={{ flexGrow: 1 }} />
 
-        {/* Use a horizontal Stack to lay out the navigation buttons */}
+     
         <Stack direction="row" spacing={1}>
           {Object.values(pages).map(({ name, href, status }) => (
             <Button
@@ -68,7 +64,7 @@ export default function TopNav() {
               }}
             >
               <Stack direction="row" alignItems="center" spacing={0.5}>
-                <Typography variant="body1" sx={{ textTransform: 'none' }}>
+                <Typography variant="subtitle1" sx={{ textTransform: 'none' }}>
                   {name}
                 </Typography>
                 {status === 'false' && (
