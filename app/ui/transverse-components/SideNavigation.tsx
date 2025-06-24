@@ -64,7 +64,7 @@ export default function TopNav() {
               }}
             >
               <Stack direction="row" alignItems="center" spacing={0.5}>
-                <Typography variant="subtitle1" sx={{ textTransform: 'none' }}>
+                <Typography variant="subtitle1" sx={{ textTransform: 'none',  fontSize: '20px', }}>
                   {name}
                 </Typography>
                 {status === 'false' && (
