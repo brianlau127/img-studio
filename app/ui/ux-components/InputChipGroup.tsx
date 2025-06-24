@@ -15,7 +15,7 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import { Chip, Stack, Box, Typography, FormControl } from '@mui/material'
-
+import { SxProps, Theme } from '@mui/material/styles'
 import theme from '../../theme'
 const { palette } = theme
 
@@ -51,6 +51,19 @@ const CustomizedChip = {
   },
 }
 
+interface ChipGroupProps {
+  width: string
+  label?: string
+  required: boolean
+  options: string[]
+  value: string
+  onChange: any
+  handleChipClick: any
+  disabled?: boolean
+  weight?: number
+  sx?: SxProps<Theme> // <-- Correctly typed sx prop
+}
+
 export const ChipGroup = ({
   width,
   label,
@@ -61,17 +74,8 @@ export const ChipGroup = ({
   handleChipClick,
   disabled,
   weight,
-}: {
-  width: string
-  label?: string
-  required: boolean
-  options: string[]
-  value: string
-  onChange: any
-  handleChipClick: any
-  disabled?: boolean
-  weight?: number
-}) => {
+  sx, // <-- sx is now a recognized prop
+}: ChipGroupProps) => {
   return (
     <Box
       sx={{
@@ -96,19 +100,24 @@ export const ChipGroup = ({
           {label + (required ? ' *' : '')}
         </Typography>
       )}
+      {/* 3. Apply the sx prop to the Stack that wraps the chips */}
+      {/* We merge the default styles with the incoming sx prop */}
+      {/* The incoming sx will override the defaults if there's a conflict */}
       <Stack
         direction="row"
         spacing={0}
         sx={{
           flexWrap: 'wrap',
           justifyContent: 'flex-start',
+          ...sx, // <-- THIS IS THE KEY CHANGE
         }}
       >
         {options.map((chipValue) => (
           <Chip
             key={chipValue}
             label={chipValue}
-            size="small"
+            // 4. (Optional but Recommended) Remove size="small" to allow external styling to have full control
+            // size="small" 
             component={'button'}
             disabled={disabled}
             onClick={() => handleChipClick({ clickedValue: chipValue, currentValue: value })}
