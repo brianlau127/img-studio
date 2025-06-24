@@ -345,7 +345,7 @@ export default function Page() {
   return (
     <Box p={5} sx={{ maxHeight: '100vh' }}>
       <Grid wrap="nowrap" container spacing={6} direction="row" columns={2}>
-        <Grid size={1.1} flex={0} sx={{ maxWidth: 700, minWidth: 610 }}>
+        <Grid size={1.1} flex={0} sx={{ maxWidth: 1100, minWidth: 1000 }}>
           <ChipGroup
             width={'100%'}
             required={false}
