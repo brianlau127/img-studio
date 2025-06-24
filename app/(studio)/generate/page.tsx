@@ -345,7 +345,7 @@ export default function Page() {
   return (
     <Box p={5} sx={{ maxHeight: '100vh' }}>
       <Grid wrap="nowrap" container spacing={6} direction="row" columns={2}>
-        <Grid size={1.1} flex={0} sx={{ maxWidth: 1100, minWidth: 1000 }}>
+        <Grid size={1.1} flex={0} sx={{ maxWidth: 1000, minWidth: 900 }}>
           <ChipGroup
             width={'100%'}
             required={false}
@@ -355,6 +355,18 @@ export default function Page() {
             onChange={generationModeSwitch}
             handleChipClick={generationModeSwitch}
             weight={500}
+            sx={{
+    // Target the label inside each chip and increase its font size
+    '& .MuiChip-label': {
+      fontSize: '1rem', // The default is smaller, maybe 0.8125rem. Try '1rem' or '1.1rem'.
+      padding: '0 8px', // Add a little more horizontal padding to the text
+    },
+    // You can also make the chip itself taller
+    '& .MuiChip-root': {
+      height: '40px', // Default is 32px
+      borderRadius: '20px', // Optional: Make it more rounded
+    },
+  }}
           />
 
           {generationMode === 'Generate an Image' && (
