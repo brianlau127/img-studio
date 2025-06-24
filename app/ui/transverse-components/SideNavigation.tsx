@@ -38,10 +38,10 @@ export default function TopNav() {
         Add the `sx` prop to the Toolbar to control the height.
         The default is around 64px on desktop. Let's make it taller.
       */}
-      <Toolbar sx={{ minHeight: '90px' }}> 
+      <Toolbar sx={{ minHeight: '150px' }}> 
         {/* Logo */}
         {/* You may need to adjust your logo's size to fit the new height */}
-        <Image priority src={icon} width={200} alt="ImgStudio" />
+        <Image priority src={icon} width={300} alt="ImgStudio" />
 
         {/* This is a spacer that pushes the navigation links to the right */}
         <Box sx={{ flexGrow: 1 }} />
