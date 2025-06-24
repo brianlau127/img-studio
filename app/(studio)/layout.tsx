@@ -14,7 +14,7 @@
 
 'use client'
 
-import TopNav from '../ui/components/TopNavigation' // Example path
+import TopNav from '../ui/components/SideNavigation' // Example path
 import Box from '@mui/material/Box'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
