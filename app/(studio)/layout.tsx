@@ -20,15 +20,14 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-      <TopNav />
-      {/* The main content area is still full-width */}
-      <Box component="main" sx={{ p: 3 }}>
-        <Container maxWidth="false">
-          {children}
-        </Container>
-      </Box>
-    </Box>
-  )
+return (
+
+<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+<TopNav />
+
+<Box component="main" sx={{ p: 3 }}>
+{children}
+</Box>
+</Box>
+)
 }
