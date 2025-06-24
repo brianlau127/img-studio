@@ -17,14 +17,19 @@
 import TopNav from '../ui/transverse-components/SideNavigation' // Example path
 import Box from '@mui/material/Box'
 
+import Container from '@mui/material/Container';
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    // Change flex-direction to arrange children vertically
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <TopNav />
-      {/* The main content area will now naturally fall below the TopNav */}
+      {/* The main content area is still full-width */}
       <Box component="main" sx={{ p: 3 }}>
-        {children}
+        {/* 2. Wrap children in a Container */}
+        {/* maxWidth can be 'xs', 'sm', 'md', 'lg', 'xl', or false */}
+        <Container maxWidth="lg">
+          {children}
+        </Container>
       </Box>
     </Box>
   )
