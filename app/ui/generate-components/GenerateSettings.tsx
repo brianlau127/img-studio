@@ -74,8 +74,6 @@ export default function GenerateSettings({
     
     fontSize: '0.9rem',
     padding: '8px 16px',
-
-    .
     ...(open && {
       backgroundColor: 'action.selected', 
       color: 'primary.main',
