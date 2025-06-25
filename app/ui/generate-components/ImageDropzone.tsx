@@ -53,8 +53,7 @@ export default function ImageDropzone(
   isNewImagePossible?: boolean
   refPosition?: number
 }  
-    
-    const onDrop = async (acceptedFiles: File[]) => {
+  const onDrop = async (acceptedFiles: File[]) => {
     onNewErrorMsg('') 
 
     const file = acceptedFiles[0]
