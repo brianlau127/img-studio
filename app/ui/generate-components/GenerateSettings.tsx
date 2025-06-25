@@ -68,14 +68,18 @@ export default function GenerateSettings({
   sx={{
     // Base styles to match the other buttons
     textTransform: 'none',
-    color: "brand",
+    
+    // CORRECTED: Provide the full path to the specific color
+    color: "brand.main", 
+    
     fontSize: '0.9rem',
     padding: '8px 16px',
 
-    // Conditional styles to show an "active" state when the menu is open
+    // This part is correct and will work as intended.
+    // It will override the 'brand.main' color when the menu is open.
     ...(open && {
-      backgroundColor: 'action.selected', // A subtle background color from the theme
-      color: 'primary.main', // Make the text and icon color primary
+      backgroundColor: 'action.selected', 
+      color: 'primary.main',
     })
   }}
 >
