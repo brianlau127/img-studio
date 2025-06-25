@@ -469,8 +469,10 @@ export default function GenerateForm({
                 textTransform: 'none', // Prevents the text from being all caps
                 fontSize: '0.9rem',
                 color: palette.text.secondary,
-                padding: '8px 16px', // Adjust padding for size}}>
+                padding: '8px 16px'}} // Adjust padding for size
                 Image to Prompt {/* The permanent text goes here */}
+                >
+               
           </Button>
             <Button variant="text" // Use "text" for a clean look without a background
               onClick={() => setValue('prompt', getRandomPrompt())}
@@ -479,16 +481,16 @@ export default function GenerateForm({
                 textTransform: 'none', // Prevents the text from being all caps
                 fontSize: '0.9rem',
                 color: palette.text.secondary,
-                padding: '8px 16px', // Adjust padding for size}}>
-                Get prompt ideas {/* The permanent text goes here */}
+                padding: '8px 16px'}} // Adjust padding for size
+                Get prompt ideas {/* The permanent text goes here */}>
           </Button>
             <Button variant="text"
               disabled={isLoading}
               onClick={() => onReset()}
               startIcon={<Autorenew />}
-      sx={{ textTransform: 'none', color: palette.text.secondary, padding: '8px 16px' }}
-    >
+      sx={{ textTransform: 'none', color: palette.text.secondary, padding: '8px 16px'}}
       Reset all fields
+    >
     </Button>
             <GenerateSettings
               control={control}
