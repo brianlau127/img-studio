@@ -460,9 +460,12 @@ export default function GenerateForm({
             }`}
           />
 
-          <Stack justifyContent="flex-end" direction="row" gap={0} pb={3}>
-            】
-              <Button
+          
+
+<Stack justifyContent="flex-end" direction="row" gap={1.5} alignItems="center" pb={3}>
+
+ 
+  <Button
     variant="text"
     onClick={() => setImageToPromptOpen(true)}
     startIcon={<Mms />}
@@ -471,12 +474,12 @@ export default function GenerateForm({
       fontSize: '0.9rem',
       color: palette.text.secondary,
       padding: '8px 16px',
-    }} // sx prop ends here
-  > {/* Opening tag ends here */}
+    }}
+  >
     Image to Prompt
-  </Button>
+  </Button> {/* <-- Ensure this closing tag is present */}
 
-
+  
   <Button
     variant="text"
     onClick={() => setValue('prompt', getRandomPrompt())}
@@ -489,6 +492,8 @@ export default function GenerateForm({
     }}
   >
     Get prompt ideas
+  </Button> 
+
 
   <Button
     variant="text"
@@ -503,38 +508,42 @@ export default function GenerateForm({
     }}
   >
     Reset all fields
+  </Button> 
+  
+  
+  <GenerateSettings
+    control={control}
+    setValue={setValue}
+    generalSettingsFields={
+      currentModel === 'veo-3.0-generate-preview' ? tempVeo3specificSettings : generationFields.settings
+    }
+    advancedSettingsFields={generationFields.advancedSettings}
+    warningMessage={
+      currentModel === 'veo-3.0-generate-preview'
+        ? 'NB: for now, Veo 3 has fewer setting options than Veo 2!'
+        : ''
+    }
+  />
+  
+  {currentModel === 'veo-3.0-generate-preview' && (
+    <CustomTooltip title="Add audio to your video" size="small">
+      <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
+    </CustomTooltip>
+  )}
+  <CustomTooltip title="Have Gemini enhance your prompt" size="small">
+    <GeminiSwitch checked={isGeminiRewrite} onChange={handleGeminiRewrite} />
+  </CustomTooltip>
+  
+  <Button
+    type="submit"
+    variant="contained"
+    disabled={isLoading}
+    endIcon={isLoading ? <WatchLaterIcon /> : <SendIcon />}
+    sx={CustomizedSendButton}
+  >
+    {'Generate'}
   </Button>
-            <GenerateSettings
-              control={control}
-              setValue={setValue}
-              generalSettingsFields={
-                currentModel === 'veo-3.0-generate-preview' ? tempVeo3specificSettings : generationFields.settings
-              }
-              advancedSettingsFields={generationFields.advancedSettings}
-              warningMessage={
-                currentModel === 'veo-3.0-generate-preview'
-                  ? 'NB: for now, Veo 3 has fewer setting options than Veo 2!'
-                  : ''
-              }
-            />
-            {currentModel === 'veo-3.0-generate-preview' && (
-              <CustomTooltip title="Add audio to your video" size="small">
-                <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
-              </CustomTooltip>
-            )}
-            <CustomTooltip title="Have Gemini enhance your prompt" size="small">
-              <GeminiSwitch checked={isGeminiRewrite} onChange={handleGeminiRewrite} />
-            </CustomTooltip>
-            <Button
-              type="submit"
-              variant="contained"
-              disabled={isLoading}
-              endIcon={isLoading ? <WatchLaterIcon /> : <SendIcon />}
-              sx={CustomizedSendButton}
-            >
-              {'Generate'}
-            </Button>
-          </Stack>
+</Stack>
           {generationType === 'Image' && process.env.NEXT_PUBLIC_EDIT_ENABLED === 'true' && (
             <Accordion
               disableGutters
