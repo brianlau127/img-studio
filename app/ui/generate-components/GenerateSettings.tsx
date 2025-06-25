@@ -70,13 +70,12 @@ export default function GenerateSettings({
     textTransform: 'none',
     
     // CORRECTED: Provide the full path to the specific color
-    color: "brand.main", 
+    color: "brand", 
     
     fontSize: '0.9rem',
     padding: '8px 16px',
 
-    // This part is correct and will work as intended.
-    // It will override the 'brand.main' color when the menu is open.
+    .
     ...(open && {
       backgroundColor: 'action.selected', 
       color: 'primary.main',
