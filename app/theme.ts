@@ -18,7 +18,6 @@ import { createTheme } from '@mui/material/styles'
 const theme = createTheme({
   palette: {
     mode: 'light',
-    divider: '#47DBFF', 
     primary: {
       main: '#4285F4',
       dark: '#1967D2',
@@ -58,6 +57,8 @@ const theme = createTheme({
       light: '#FBBC04',
       dark: '#E37400',
     },
+    divider:{ main: '#47DBFF', 
+             secondary : '#202124')}
   },
   typography: {
     fontFamily: 'Roboto',
