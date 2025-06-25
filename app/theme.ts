@@ -18,6 +18,7 @@ import { createTheme } from '@mui/material/styles'
 const theme = createTheme({
   palette: {
     mode: 'light',
+    divider: '#BDBDBD', 
     primary: {
       main: '#4285F4',
       dark: '#1967D2',
