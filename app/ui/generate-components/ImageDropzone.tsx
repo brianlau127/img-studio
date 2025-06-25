@@ -24,7 +24,7 @@ import { getAspectRatio } from '../edit-components/EditImageDropzone'
 const { palette } = theme
 
 export default function ImageDropzone(
-  const MAX_FILE_SIZE_BYTES = 150 * 1024;  
+
   {
   setImage,
   image,
@@ -53,7 +53,7 @@ export default function ImageDropzone(
   isNewImagePossible?: boolean
   refPosition?: number
 }  
-
+    const MAX_FILE_SIZE_BYTES = 150 * 1024;  
     const onDrop = async (acceptedFiles: File[]) => {
     onNewErrorMsg('') 
 
