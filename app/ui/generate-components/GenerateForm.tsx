@@ -527,15 +527,9 @@ export default function GenerateForm({
   />
   
   {currentModel === 'veo-3.0-generate-preview' && (
-    <FormControlLabel
-  sx={{ 
-    color: 'text.secondary', // Style the label to match the others
-    mr: 1,                   // Add a little margin to the right for spacing
-  }}
-  control={<AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />}
-  label="Add Audio"
-  labelPlacement="start" // Puts the label to the left of the switch
-/>
+   <CustomTooltip title="Add audio to your video" size="small">
+      <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
+    </CustomTooltip>
   )}
 
   
