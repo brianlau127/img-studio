@@ -408,7 +408,7 @@ export default function GenerateForm({
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box sx={{ pb: 4 }}>
           <Box sx={{ pb: 5 }}>
-            <Stack direction="row" spacing={2} justifyContent="flex-start" alignItems="center">
+            <Stack direction="row" spacing={3} justifyContent="flex-start" alignItems="center">
               <Typography variant="h1" color={palette.text.secondary} sx={{ fontSize: '1.8rem' }}>
                 {'Generate with'}
               </Typography>
@@ -464,17 +464,17 @@ export default function GenerateForm({
             】
             <Button variant="text" // Use "text" for a clean look without a background
               onClick={() => {() => setImageToPromptOpen(true)}
-              startIcon={<Lightbulb sx={CustomizedIconButton}/>} // The icon goes here
+              startIcon={<Mms />} // The icon goes here
               sx={{
                 textTransform: 'none', // Prevents the text from being all caps
                 fontSize: '0.9rem',
                 color: palette.text.secondary,
                 padding: '8px 16px', // Adjust padding for size}}>
-                Get prompt ideas {/* The permanent text goes here */}
+                Image to Prompt {/* The permanent text goes here */}
           </Button>
             <Button variant="text" // Use "text" for a clean look without a background
               onClick={() => setValue('prompt', getRandomPrompt())
-              startIcon={<Lightbulb sx={CustomizedIconButton}/>} // The icon goes here
+              startIcon={<Lightbulb />} // The icon goes here
               sx={{
                 textTransform: 'none', // Prevents the text from being all caps
                 fontSize: '0.9rem',
