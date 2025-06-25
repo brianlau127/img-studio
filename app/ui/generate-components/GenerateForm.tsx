@@ -473,7 +473,7 @@ export default function GenerateForm({
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.divider,
+      color: palette.divider.main,
       padding: '8px 16px',
     }}
   >
@@ -488,7 +488,7 @@ export default function GenerateForm({
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.divider,
+      color: palette.divider.main,
       padding: '8px 16px',
     }}
   >
@@ -504,7 +504,7 @@ export default function GenerateForm({
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.divider,
+      color: palette.divider.main,
       padding: '8px 16px',
     }}
   >
