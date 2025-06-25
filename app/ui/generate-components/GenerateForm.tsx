@@ -463,7 +463,7 @@ export default function GenerateForm({
           <Stack justifyContent="flex-end" direction="row" gap={0} pb={3}>
             】
             <Button variant="text" // Use "text" for a clean look without a background
-              onClick={() => {() => setImageToPromptOpen(true)}
+              onClick={() => setImageToPromptOpen(true)}
               startIcon={<Mms />} // The icon goes here
               sx={{
                 textTransform: 'none', // Prevents the text from being all caps
