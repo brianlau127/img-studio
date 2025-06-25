@@ -68,7 +68,7 @@ export default function GenerateSettings({
   sx={{
     // Base styles to match the other buttons
     textTransform: 'none',
-    color: palette.divider.main,
+    color: "brand",
     fontSize: '0.9rem',
     padding: '8px 16px',
 
