@@ -16,6 +16,7 @@
 
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { Control, SubmitHandler, useForm, useWatch } from 'react-hook-form'
 
@@ -530,9 +531,15 @@ export default function GenerateForm({
       <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
     </CustomTooltip>
   )}
-  <CustomTooltip title="Have Gemini enhance your prompt" size="small">
-    <GeminiSwitch checked={isGeminiRewrite} onChange={handleGeminiRewrite} />
-  </CustomTooltip>
+<FormControlLabel
+  sx={{ 
+    color: 'text.secondary', // Style the label
+    mr: 1, // Add a little margin to the right
+  }}
+  control={<GeminiSwitch checked={isGeminiRewrite} onChange={handleGeminiRewrite} />}
+  label="Enhance with Gemini"
+  labelPlacement="start" // This puts the text to the left of the switch
+/>
   
   <Button
     type="submit"
