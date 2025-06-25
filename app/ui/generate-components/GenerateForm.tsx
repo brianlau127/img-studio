@@ -461,43 +461,35 @@ export default function GenerateForm({
           />
 
           <Stack justifyContent="flex-end" direction="row" gap={0} pb={3}>
-            <CustomTooltip title="Image to prompt generator" size="small">
-              <IconButton
-                onClick={() => setImageToPromptOpen(true)}
-                aria-label="Prompt Generator"
-                disableRipple
-                sx={{ px: 0.5 }}
-              >
-                <Avatar sx={CustomizedAvatarButton}>
-                  <Mms sx={CustomizedIconButton} />
-                </Avatar>
-              </IconButton>
-            </CustomTooltip>
-            <CustomTooltip title="Get prompt ideas" size="small">
-              <IconButton
-                onClick={() => setValue('prompt', getRandomPrompt())}
-                aria-label="Random prompt"
-                disableRipple
-                sx={{ px: 0.5 }}
-              >
-                <Avatar sx={CustomizedAvatarButton}>
-                  <Lightbulb sx={CustomizedIconButton} />
-                </Avatar>
-              </IconButton>
-            </CustomTooltip>
-            <CustomTooltip title="Reset all fields" size="small">
-              <IconButton
-                disabled={isLoading}
-                onClick={() => onReset()}
-                aria-label="Reset form"
-                disableRipple
-                sx={{ px: 0.5 }}
-              >
-                <Avatar sx={CustomizedAvatarButton}>
-                  <Autorenew sx={CustomizedIconButton} />
-                </Avatar>
-              </IconButton>
-            </CustomTooltip>
+            】
+            <Button variant="text" // Use "text" for a clean look without a background
+              onClick={() => {() => setImageToPromptOpen(true)}
+              startIcon={<Lightbulb sx={CustomizedIconButton}/>} // The icon goes here
+              sx={{
+                textTransform: 'none', // Prevents the text from being all caps
+                fontSize: '0.9rem',
+                color: palette.text.secondary,
+                padding: '8px 16px', // Adjust padding for size}}>
+                Get prompt ideas {/* The permanent text goes here */}
+          </Button>
+            <Button variant="text" // Use "text" for a clean look without a background
+              onClick={() => setValue('prompt', getRandomPrompt())
+              startIcon={<Lightbulb sx={CustomizedIconButton}/>} // The icon goes here
+              sx={{
+                textTransform: 'none', // Prevents the text from being all caps
+                fontSize: '0.9rem',
+                color: palette.text.secondary,
+                padding: '8px 16px', // Adjust padding for size}}>
+                Get prompt ideas {/* The permanent text goes here */}
+          </Button>
+            <Button variant="text"
+              disabled={isLoading}
+              onClick={() => onReset()}
+              startIcon={<Autorenew />}
+      sx={{ textTransform: 'none', color: palette.text.secondary, padding: '8px 16px' }}
+    >
+      Reset all fields
+    </Button>
             <GenerateSettings
               control={control}
               setValue={setValue}
