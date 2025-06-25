@@ -419,12 +419,15 @@ export default function Page() {
   {generationMode === 'Generate an Image' ? (
     <OutputImagesDisplay
       isLoading={isLoading}
-      // ... other props
+      generatedImagesInGCS={generatedImages}
+      generatedCount={generatedCount}
+      isPromptReplayAvailable={true}
     />
   ) : (
     <OutputVideosDisplay
       isLoading={isLoading}
-      // ... other props
+      generatedVideosInGCS={generatedVideos}
+      generatedCount={generatedCount}
     />
   )}
 </Grid>
