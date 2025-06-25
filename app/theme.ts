@@ -58,7 +58,7 @@ const theme = createTheme({
       dark: '#E37400',
     },
     divider:{ main: '#47DBFF', 
-             secondary : '#202124')}
+             secondary : '#202124',}
   },
   typography: {
     fontFamily: 'Roboto',
