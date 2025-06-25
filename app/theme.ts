@@ -24,14 +24,14 @@ const theme = createTheme({
       light: '#AECBFA',
     },
     secondary: {
-      main: '#5F6368',
+      main: '#313336',
       dark: '#202124',
       light: '#E8EAED',
     },
     text: {
       primary: '#202124',
       secondary: '#3C4043',
-      disabled: '#5F6368',
+      disabled: '#313336',
     },
     background: {
       paper: '#202124',
