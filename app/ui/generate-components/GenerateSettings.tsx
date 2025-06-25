@@ -74,7 +74,7 @@ export default function GenerateSettings({
     // Conditional styles to show an "active" state when the menu is open
     ...(open && {
       backgroundColor: 'action.selected', // A subtle background color from the theme
-      color: palette.divider, // Make the text and icon color primary
+      color: palette.divider.main, // Make the text and icon color primary
     })
   }}
 >
