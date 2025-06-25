@@ -57,8 +57,13 @@ const theme = createTheme({
       light: '#FBBC04',
       dark: '#E37400',
     },
-    divider:{ main: '#47DBFF', 
-             secondary : '#202124',}
+    brand: {
+      main: '#47DBFF', // A nice shade of orange
+      light: '#202124',
+      dark: '#E65100',
+      contrastText: '#ffffff',
+    },
+   
   },
   typography: {
     fontFamily: 'Roboto',
