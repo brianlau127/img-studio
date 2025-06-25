@@ -473,7 +473,7 @@ export default function GenerateForm({
                 Image to Prompt {/* The permanent text goes here */}
           </Button>
             <Button variant="text" // Use "text" for a clean look without a background
-              onClick={() => setValue('prompt', getRandomPrompt())
+              onClick={() => setValue('prompt', getRandomPrompt())}
               startIcon={<Lightbulb />} // The icon goes here
               sx={{
                 textTransform: 'none', // Prevents the text from being all caps
