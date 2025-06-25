@@ -407,7 +407,7 @@ export default function Page() {
             />
           )}
         </Grid>
-        <Grid size={0.9} flex={1} sx={{ pt: 14, maxWidth: 850, minWidth: 400 }}>
+        <Grid size={0.9} flex={1} sx={{ pt: 14, maxWidth: 850, minWidth: 400 ,border: '1px solid #E0E0E0',  }}>
           {generationMode === 'Generate an Image' ? (
             <OutputImagesDisplay
               isLoading={isLoading}
