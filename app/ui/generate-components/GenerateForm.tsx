@@ -537,15 +537,7 @@ export default function GenerateForm({
   labelPlacement="start" // Puts the label to the left of the switch
 />
   )}
-<FormControlLabel
-  sx={{ 
-    color: 'text.secondary', // Style the label
-    mr: 1, // Add a little margin to the right
-  }}
-  control={<GeminiSwitch checked={isGeminiRewrite} onChange={handleGeminiRewrite} />}
-  label="Enhance with Gemini"
-  labelPlacement="start" // This puts the text to the left of the switch
-/>
+
   
   <Button
     type="submit"
