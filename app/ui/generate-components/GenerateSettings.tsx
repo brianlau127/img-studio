@@ -61,20 +61,21 @@ export default function GenerateSettings({
 
   return (
     <>
-      <Button
-  variant="contained"
+     <Button
+  variant="text"
   onClick={handleClick}
   startIcon={<Settings />}
   sx={{
     // Base styles to match the other buttons
     textTransform: 'none',
-    color: 'text.secondary',
+    color: palette.divider.main,
+    fontSize: '0.9rem',
     padding: '8px 16px',
 
     // Conditional styles to show an "active" state when the menu is open
     ...(open && {
       backgroundColor: 'action.selected', // A subtle background color from the theme
-      color: palette.divider.main, // Make the text and icon color primary
+      color: 'primary.main', // Make the text and icon color primary
     })
   }}
 >
