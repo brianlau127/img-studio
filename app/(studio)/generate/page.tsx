@@ -412,7 +412,7 @@ export default function Page() {
 
 
   <Typography variant="h3" component="h2" sx={{ mb: 2 }}> {/* mb: 2 adds margin-bottom */}
-    Generated Output
+    Generated Output:
   </Typography>
 
 
