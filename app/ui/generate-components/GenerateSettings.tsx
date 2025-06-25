@@ -15,7 +15,7 @@
 import * as React from 'react'
 import { IconButton, Typography, Box, Menu, MenuItem, Avatar } from '@mui/material'
 import { CustomizedAvatarButton, CustomizedIconButton, CustomizedIconButtonOpen } from '../ux-components/Button-SX'
-
+import Button from '@mui/material/Button';
 import theme from '../../theme'
 const { palette } = theme
 
@@ -61,18 +61,25 @@ export default function GenerateSettings({
 
   return (
     <>
-      <CustomTooltip title="Open settings" size="small">
-        <IconButton onClick={handleClick} disableRipple sx={{ px: 0.5 }}>
-          <Avatar sx={{ ...CustomizedAvatarButton, ...(open === true && CustomizedIconButtonOpen) }}>
-            <Settings
-              sx={{
-                ...CustomizedIconButton,
-                ...(open === true && CustomizedIconButtonOpen),
-              }}
-            />
-          </Avatar>
-        </IconButton>
-      </CustomTooltip>
+      <Button
+  variant="text"
+  onClick={handleClick}
+  startIcon={<Settings />}
+  sx={{
+    // Base styles to match the other buttons
+    textTransform: 'none',
+    color: 'text.secondary',
+    padding: '8px 16px',
+
+    // Conditional styles to show an "active" state when the menu is open
+    ...(open && {
+      backgroundColor: 'action.selected', // A subtle background color from the theme
+      color: 'primary.main', // Make the text and icon color primary
+    })
+  }}
+>
+  Settings
+</Button>
       <Menu
         anchorEl={anchorEl}
         anchorOrigin={{
