@@ -358,12 +358,12 @@ export default function Page() {
             sx={{
     // Target the label inside each chip and increase its font size
     '& .MuiChip-label': {
-      fontSize: '1rem', // The default is smaller, maybe 0.8125rem. Try '1rem' or '1.1rem'.
+      fontSize: '1.2rem', // The default is smaller, maybe 0.8125rem. Try '1rem' or '1.1rem'.
       padding: '0 8px', // Add a little more horizontal padding to the text
     },
     // You can also make the chip itself taller
     '& .MuiChip-root': {
-      height: '40px', // Default is 32px
+      height: '80px', // Default is 32px
       borderRadius: '20px', // Optional: Make it more rounded
     },
   }}
