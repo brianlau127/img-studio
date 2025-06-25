@@ -52,7 +52,7 @@ export default function ImageDropzone(
   addAdditionalRefObject?: () => void
   isNewImagePossible?: boolean
   refPosition?: number
-}  
+}) {  
   const onDrop = async (acceptedFiles: File[]) => {
     onNewErrorMsg('') 
 
