@@ -467,13 +467,13 @@ export default function GenerateForm({
 
  
   <Button
-    variant="text"
+    variant="contained"
     onClick={() => setImageToPromptOpen(true)}
     startIcon={<Mms />}
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.text.secondary,
+      color: palette.divider,
       padding: '8px 16px',
     }}
   >
@@ -482,13 +482,13 @@ export default function GenerateForm({
 
   
   <Button
-    variant="text"
+    variant="contained"
     onClick={() => setValue('prompt', getRandomPrompt())}
     startIcon={<Lightbulb />}
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.text.secondary,
+      color: palette.divider,
       padding: '8px 16px',
     }}
   >
@@ -497,14 +497,14 @@ export default function GenerateForm({
 
 
   <Button
-    variant="text"
+    variant="contained"
     disabled={isLoading}
     onClick={() => onReset()}
     startIcon={<Autorenew />}
     sx={{
       textTransform: 'none',
       fontSize: '0.9rem',
-      color: palette.text.secondary,
+      color: palette.divider,
       padding: '8px 16px',
     }}
   >
