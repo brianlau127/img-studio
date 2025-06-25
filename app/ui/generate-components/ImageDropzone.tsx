@@ -53,7 +53,7 @@ export default function ImageDropzone(
   isNewImagePossible?: boolean
   refPosition?: number
 }  
-    const MAX_FILE_SIZE_BYTES = 150 * 1024;  
+    
     const onDrop = async (acceptedFiles: File[]) => {
     onNewErrorMsg('') 
 
