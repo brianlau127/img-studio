@@ -365,6 +365,7 @@ export default function Page() {
     '& .MuiChip-root': {
       height: '60px', // Default is 32px
       borderRadius: '20px', // Optional: Make it more rounded
+      mb: 0, 
     },
   }}
           />
