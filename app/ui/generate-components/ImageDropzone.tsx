@@ -23,7 +23,9 @@ import { Add, AddPhotoAlternate, ControlPointDuplicate } from '@mui/icons-materi
 import { getAspectRatio } from '../edit-components/EditImageDropzone'
 const { palette } = theme
 
-export default function ImageDropzone({
+export default function ImageDropzone(
+const MAX_FILE_SIZE_BYTES = 150 * 1024;  
+  {
   setImage,
   image,
   onNewErrorMsg,
@@ -50,13 +52,25 @@ export default function ImageDropzone({
   addAdditionalRefObject?: () => void
   isNewImagePossible?: boolean
   refPosition?: number
-}) {
-  const onDrop = async (acceptedFiles: File[]) => {
-    onNewErrorMsg('')
+}  
+
+    const onDrop = async (acceptedFiles: File[]) => {
+    onNewErrorMsg('') 
 
     const file = acceptedFiles[0]
-    const allowedTypes = ['image/png', 'image/webp', 'image/jpeg']
+    const MAX_FILE_SIZE_KB = 150;
+    const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_KB * 1024; 
 
+    
+    if (file.size > MAX_FILE_SIZE_BYTES) {
+      onNewErrorMsg(`File size exceeds the ${MAX_FILE_SIZE_KB}KB limit. Please upload a smaller file.`);
+      return; 
+    }
+    
+
+
+    
+    const allowedTypes = ['image/png', 'image/webp', 'image/jpeg']
     if (!allowedTypes.includes(file.type)) {
       onNewErrorMsg('Wrong input image format - Only png, jpeg and webp are allowed')
       return
@@ -65,6 +79,7 @@ export default function ImageDropzone({
     const base64 = await fileToBase64(file)
     const newImage = `data:${file.type};base64,${base64}`
     setImage(newImage)
+
 
     if (setValue) {
       const img = new window.Image()
