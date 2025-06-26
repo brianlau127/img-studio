@@ -82,7 +82,7 @@ export default function CustomTooltip({
   children: React.ReactElement
   title: string
   size: string
-  
+  sx?: SxProps<Theme> 
 }) {
   const [open, setOpen] = React.useState(false)
 
@@ -128,7 +128,7 @@ export function CustomWhiteTooltip({
   children: React.ReactElement
   title: string
   size: string
-  sx?: SxProps<Theme> 
+  
 }) {
   const [open, setOpen] = React.useState(false)
 
