@@ -98,7 +98,9 @@ export default function ReferencePicker({}) {
 
   return (
     <>
-      <CustomTooltip title="Add references" size="small">
+      <CustomTooltip title="Add references" variant="small" // Clearly for styling
+  placement="bottom" // Clearly for positioning
+>
         <IconButton onClick={handleClick} disableRipple sx={{ px: 0.5 }}>
           <Avatar sx={{ ...CustomizedAvatarButton, ...(open === true && CustomizedIconButtonOpen) }}>
             <LibraryAdd
