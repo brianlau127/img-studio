@@ -77,14 +77,18 @@ const CustomizedBigTooltip = {
 export default function CustomTooltip({
   children,
   title,
-  size,
+  variant, // Changed from `size` to `variant` for styling
+  placement = 'top', // Added standard `placement` prop for positioning
   sx,
   PopperProps,
 }: {
   children: React.ReactElement
   title: string
-  size: string
-  sx?: SxProps<Theme> 
+  /** Controls the custom styling of the tooltip ('small' or 'big') */
+  variant?: 'small' | 'big'
+  /** The standard MUI placement for the tooltip */
+  placement?: TooltipProps['placement']
+  sx?: SxProps<Theme>
   PopperProps?: TooltipProps['PopperProps']
 }) {
   const [open, setOpen] = React.useState(false)
@@ -103,12 +107,17 @@ export default function CustomTooltip({
       open={open}
       sx={sx}
       PopperProps={PopperProps}
-      placement={size === 'small' ? 'bottom' : size === 'big' ? 'top-start' : 'top'}
+      // Use the standard placement prop directly
+      placement={placement}
       disableInteractive
       TransitionComponent={Fade}
       TransitionProps={{ timeout: 600 }}
       slotProps={{
-        popper: { ...(size === 'small' && CustomizedSmallTooltip), ...(size === 'big' && CustomizedBigTooltip) },
+        // Use the new `variant` prop to select the custom styles
+        popper: {
+          ...(variant === 'small' && CustomizedSmallTooltip),
+          ...(variant === 'big' && CustomizedBigTooltip),
+        },
       }}
     >
       <Box
@@ -122,7 +131,6 @@ export default function CustomTooltip({
     </Tooltip>
   )
 }
-
 export function CustomWhiteTooltip({
   children,
   title,
