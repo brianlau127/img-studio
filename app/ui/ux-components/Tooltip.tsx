@@ -79,11 +79,13 @@ export default function CustomTooltip({
   title,
   size,
   sx,
+  PopperProps,
 }: {
   children: React.ReactElement
   title: string
   size: string
   sx?: SxProps<Theme> 
+  PopperProps?: TooltipProps['PopperProps']
 }) {
   const [open, setOpen] = React.useState(false)
 
@@ -100,6 +102,7 @@ export default function CustomTooltip({
       title={title}
       open={open}
       sx={sx}
+      PopperProps={PopperProps}
       placement={size === 'small' ? 'bottom' : size === 'big' ? 'top-start' : 'top'}
       disableInteractive
       TransitionComponent={Fade}
