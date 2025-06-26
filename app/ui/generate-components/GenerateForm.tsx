@@ -532,8 +532,6 @@ export default function GenerateForm({
     <CustomTooltip
       title="Add audio to your video"
       size="small"
-      placement="bottom" // You can explicitly set placement here now
-      // This new prop fixes the pop-up placement issue
       PopperProps={{
         container: document.body,
       }}
