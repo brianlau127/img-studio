@@ -530,7 +530,7 @@ export default function GenerateForm({
               // This Box correctly handles moving the switch UP
               <Box sx={{ position: 'relative', top: '-10px' }}>
                 <CustomTooltip
-  title="Add audio to your video"
+  title="             Add audio to your video"
   variant="small" // Clearly for styling
   placement="bottom" // Clearly for positioning
 
