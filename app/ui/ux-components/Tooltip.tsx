@@ -124,7 +124,7 @@ export default function CustomTooltip({
         onMouseEnter={handleTooltipOpen}
         onMouseLeave={handleTooltipClose}
         onClick={handleTooltipClose}
-        sx={{ display: 'inline-block' }}
+        sx={{ display: 'flex' }}
       >
         {children ? children : null}
       </Box>
