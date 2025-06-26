@@ -14,6 +14,7 @@
 
 import React from 'react'
 import { Box, Fade, Tooltip } from '@mui/material'
+import { SxProps, Theme } from '@mui/material/styles'
 import theme from '../../theme'
 const { palette } = theme
 
