@@ -69,7 +69,7 @@ export default function Page() {
     return (
       <Box p={5} sx={{ maxHeight: '100vh' }}>
         <Grid wrap="nowrap" container spacing={6} direction="row" columns={2}>
-          <Grid size={1.1} flex={0} sx={{ maxWidth: 700, minWidth: 610 }}>
+          <Grid size={1.1} flex={0} sx={{ maxWidth: 1000, minWidth: 900 }}>
             <EditForm
               isLoading={isEditLoading}
               onRequestSent={handleRequestSent}
@@ -78,7 +78,10 @@ export default function Page() {
               errorMsg={editErrorMsg}
             />
           </Grid>
-          <Grid size={0.9} flex={1} sx={{ pt: 11, maxWidth: 850, minWidth: 400 }}>
+          <Grid size={0.9} flex={1} sx={{ padding: 2, maxWidth: 900, minWidth: 450 ,border: '3px solid #202124',}}>
+            <Typography variant="h3" component="h2" sx={{ mb: 2 }}> {/* mb: 2 adds margin-bottom */}
+    Edited Output:
+  </Typography>
             <OutputImagesDisplay
               isLoading={isEditLoading}
               generatedImagesInGCS={editedImagesInGCS}
