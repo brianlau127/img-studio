@@ -526,13 +526,20 @@ export default function GenerateForm({
     }
   />
   
-  {currentModel === 'veo-3.0-generate-preview' && (
+   {currentModel === 'veo-3.0-generate-preview' && (
     <CustomTooltip
       title="Add audio to your video"
       variant="small"
       placement="bottom"
     >
-      <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
+      {/* 
+        This Box becomes the stable anchor for the Tooltip.
+        The Tooltip wraps this Box. The Box wraps the AudioSwitch.
+        This isolates the complex AudioSwitch from the Tooltip's logic.
+      */}
+      <Box component="span" sx={{ display: 'inline-block' }}>
+        <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
+      </Box>
     </CustomTooltip>
   )}
   
