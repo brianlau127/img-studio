@@ -149,7 +149,7 @@ export default function EditImageDropzone({
     const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_KB * 1024;
 
     if (file.size > MAX_FILE_SIZE_BYTES) {
-      onNewErrorMsg(`File size exceeds the ${MAX_FILE_SIZE_KB}KB limit. Please upload a smaller file.`);
+      setNewErrorMsg(`File size exceeds the ${MAX_FILE_SIZE_KB}KB limit. Please upload a smaller file.`);
       return; 
     }
     const allowedTypes = ['image/png', 'image/webp', 'image/jpeg']
