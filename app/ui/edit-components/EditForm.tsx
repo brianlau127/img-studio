@@ -289,19 +289,21 @@ export default function EditForm({
           gap={0}
           pb={3}
         >
-          <CustomTooltip title="Reset all fields" size="small">
-            <IconButton
-              disabled={isLoading}
-              onClick={() => onReset()}
-              aria-label="Reset form"
-              disableRipple
-              sx={{ px: 0.5 }}
-            >
-              <Avatar sx={CustomizedAvatarButton}>
-                <Autorenew sx={CustomizedIconButton} />
-              </Avatar>
-            </IconButton>
-          </CustomTooltip>
+          <Button
+    variant="contained"
+    disabled={isLoading}
+    onClick={() => onReset()}
+    disableRipple
+    startIcon={<Autorenew />}
+    sx={{
+      textTransform: 'none',
+      fontSize: '0.9rem',
+      color: "brand",
+      padding: '8px 16px',
+    }}
+  >
+    Reset all fields
+  </Button> 
           <FormInputEditSettings control={control} setValue={setValue} editSettingsFields={editSettingsFields} />
           {selectedEditMode?.mandatoryMask && selectedEditMode?.maskType && (
             <Button
