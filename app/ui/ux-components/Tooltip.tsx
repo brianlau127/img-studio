@@ -120,6 +120,7 @@ export function CustomWhiteTooltip({
   children,
   title,
   size,
+  sx,
 }: {
   children: React.ReactElement
   title: string
