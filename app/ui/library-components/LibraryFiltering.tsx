@@ -166,7 +166,7 @@ export default function LibraryFiltering({
               {'Fetch'}
             </Button>
             <CustomTooltip title="Reset all filters" variant="small" // Clearly for styling
-  placement="bottom" // Clearly for positioning>
+  placement="bottom">// Clearly for positioning>
               <IconButton onClick={() => reset()} aria-label="Reset form" disableRipple sx={{ px: 0.5 }}>
                 <Avatar sx={CustomizedAvatarButton}>
                   <Autorenew sx={CustomizedIconButton} />
