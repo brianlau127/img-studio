@@ -463,7 +463,7 @@ export default function GenerateForm({
 
           
 
-<Stack justifyContent="flex-end" direction="row" gap={1.5} alignItems="center" pb={3}>
+<Stack justifyContent="flex-end" direction="row" gap={1.5} alignItems="flex-end" pb={3}>
 
  
   <Button
