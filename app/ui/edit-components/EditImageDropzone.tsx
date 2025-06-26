@@ -37,11 +37,7 @@ export function getAspectRatio(width: number, height: number): string {
     [4, 3],
     [3, 4],
     [1, 1],
-    [3, 2],
-    [2, 3],
-    [6, 5],
-    [4, 15],
-    [1, 2],
+    
 
   ]
 
@@ -147,8 +143,15 @@ export default function EditImageDropzone({
 
   const onDrop = async (acceptedFiles: File[]) => {
     setErrorMsg('')
-
+    
     const file = acceptedFiles[0]
+    const MAX_FILE_SIZE_KB = 150;
+    const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_KB * 1024;
+
+    if (file.size > MAX_FILE_SIZE_BYTES) {
+      onNewErrorMsg(`File size exceeds the ${MAX_FILE_SIZE_KB}KB limit. Please upload a smaller file.`);
+      return; 
+    }
     const allowedTypes = ['image/png', 'image/webp', 'image/jpeg']
 
     if (!allowedTypes.includes(file.type)) {
