@@ -109,7 +109,9 @@ export default function FormInputDropdown({
   }
 
   return (
-    <CustomTooltip title={itemIndication == null ? '' : itemIndication} size="big">
+    <CustomTooltip title={itemIndication == null ? '' : itemIndication} variant="big"
+  placement="top-start"
+      >
       <FormControl size={'small'}>
         <Controller
           render={({ field: { onChange, value } }) => (
