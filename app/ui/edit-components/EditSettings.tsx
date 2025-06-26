@@ -64,18 +64,27 @@ export default function FormInputEditSettings({
 
   return (
     <>
-      <CustomTooltip title="Open settings" size="small">
-        <IconButton onClick={handleClick} disableRipple sx={{ px: 0.4, pr: 0.2 }}>
-          <Avatar sx={{ ...CustomizedAvatarButton, ...(open === true && CustomizedIconButtonOpen) }}>
-            <Settings
-              sx={{
-                ...CustomizedIconButton,
-                ...(open === true && CustomizedIconButtonOpen),
-              }}
-            />
-          </Avatar>
-        </IconButton>
-      </CustomTooltip>
+      <Button
+  variant="text"
+  onClick={handleClick}
+  startIcon={<Settings />}
+  sx={{
+    // Base styles to match the other buttons
+    textTransform: 'none',
+    
+    // CORRECTED: Provide the full path to the specific color
+    color: "brand", 
+    
+    fontSize: '0.9rem',
+    padding: '8px 16px',
+    ...(open && {
+      backgroundColor: 'action.selected', 
+      color: 'primary.main',
+    })
+  }}
+>
+  Settings
+</Button>
       <Menu
         anchorEl={anchorEl}
         anchorOrigin={{
