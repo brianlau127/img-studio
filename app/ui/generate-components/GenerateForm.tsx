@@ -534,9 +534,7 @@ export default function GenerateForm({
   variant="small" // Clearly for styling
   placement="bottom" // Clearly for positioning
 
-                  PopperProps={{
-                    container: document.body,
-                  }}
+                  
                 >
                   <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
                 </CustomTooltip>
