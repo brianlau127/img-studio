@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
   let response = {}
 
   try {
-    const iapEmail = req.headers.get('X-Goog-Authenticated-User-Email')Add commentMore actions
+    const iapEmail = req.headers.get('X-Goog-Authenticated-User-Email')
 
     if (iapEmail) {
       // This is the normal, secure path when the app is running behind IAP.
