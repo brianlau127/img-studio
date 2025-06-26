@@ -78,7 +78,7 @@ export default function Page() {
               errorMsg={editErrorMsg}
             />
           </Grid>
-          <Grid size={0.9} flex={1} sx={{ padding: 2, maxWidth: 1000, minWidth: 550 ,border: '3px solid #202124',}}>
+          <Grid size={0.9} flex={1} sx={{ padding: 2, maxWidth: 930, minWidth: 480 ,border: '3px solid #202124',}}>
             <Typography variant="h3" component="h2" sx={{ mb: 2 }}> {/* mb: 2 adds margin-bottom */}
     Edited Output:
   </Typography>
