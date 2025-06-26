@@ -77,10 +77,12 @@ export default function CustomTooltip({
   children,
   title,
   size,
+  sx,
 }: {
   children: React.ReactElement
   title: string
   size: string
+  
 }) {
   const [open, setOpen] = React.useState(false)
 
@@ -96,6 +98,7 @@ export default function CustomTooltip({
     <Tooltip
       title={title}
       open={open}
+      sx={sx}
       placement={size === 'small' ? 'bottom' : size === 'big' ? 'top-start' : 'top'}
       disableInteractive
       TransitionComponent={Fade}
@@ -125,6 +128,7 @@ export function CustomWhiteTooltip({
   children: React.ReactElement
   title: string
   size: string
+  sx?: SxProps<Theme> 
 }) {
   const [open, setOpen] = React.useState(false)
 
