@@ -527,7 +527,7 @@ export default function GenerateForm({
   />
   
   {currentModel === 'veo-3.0-generate-preview' && (
-   <CustomTooltip title="Add audio to your video" size="small">
+   <CustomTooltip title="Add audio to your video" size="small"
      sx={{ 
     transform: 'translateY(-24px)' 
   }}>
