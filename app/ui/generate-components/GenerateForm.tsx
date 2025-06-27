@@ -526,24 +526,19 @@ export default function GenerateForm({
     }
   />
   
-  
 
   {currentModel === 'veo-3.0-generate-preview' && (
   <Box sx={{ position: 'relative', top: '-10px' }}>
     <CustomTooltip
-      // The title remains a simple string, satisfying the type checker
       title="Add audio to your video"
       variant="small"
       placement="bottom"
-      
-      // THIS IS THE FIX:
-      // Pass styling directly to the tooltip's popper element
-      slotProps={{
-        popper: {
-          sx: {
-            // This adds padding inside the tooltip, above the text
-            paddingTop: '8px', 
-          },
+
+      // THE FIX: Use the prop that your component actually accepts.
+      PopperProps={{
+        sx: {
+          // This adds padding inside the tooltip, above the text
+          paddingTop: '8px', 
         },
       }}
     >
