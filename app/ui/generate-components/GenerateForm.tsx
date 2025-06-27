@@ -527,6 +527,7 @@ export default function GenerateForm({
   />
   
    {currentModel === 'veo-3.0-generate-preview' && (
+  <Box sx={{ position: 'relative', top: '-10px' }}>
     <CustomTooltip
       title="Add audio to your video"
       variant="small"
@@ -534,6 +535,7 @@ export default function GenerateForm({
     >
         <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
     </CustomTooltip>
+           </Box>
   )}
   
   <Button
