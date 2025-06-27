@@ -551,7 +551,7 @@ export default function GenerateForm({
   >
     <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
   </CustomTooltip>
-)
+)}
 
  
   
