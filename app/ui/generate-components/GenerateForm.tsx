@@ -553,25 +553,7 @@ export default function GenerateForm({
   </CustomTooltip>
 )
 
-  {currentModel === 'veo-3.0-generate-preview' && (
-  <Box sx={{ position: 'relative', top: '-10px' }}>
-    <CustomTooltip
-      title="Add audio to your video"
-      variant="small"
-      placement="bottom"
-
-      // THE FIX: Use the prop that your component actually accepts.
-      PopperProps={{
-        sx: {
-          // This adds padding inside the tooltip, above the text
-          paddingTop: '8px', 
-        },
-      }}
-    >
-      <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
-    </CustomTooltip>
-  </Box>
-)}
+ 
   
   <Button
     type="submit"
