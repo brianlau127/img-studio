@@ -528,25 +528,30 @@ export default function GenerateForm({
 
   
 {currentModel === 'veo-3.0-generate-preview' && (
-
   <CustomTooltip
     title="Add audio to your video"
-    variant="small"
+    variant="small" // Make sure to keep this, as it triggers the internal styles
     placement="bottom"
     
-    // THIS IS THE DEFINITIVE FIX:
+    // This is the complete and correct configuration
     PopperProps={{
+      // Modifier to add space BETWEEN the icon and the tooltip bubble
       modifiers: [
         {
           name: 'offset',
           options: {
             // [skidding, distance]
-            // skidding: moves the tooltip left/right (0 = no horizontal shift)
-            // distance: moves the tooltip away from the icon (e.g., 10px down)
-            offset: [0, 10], 
+            // Move 12px down, 0px left/right
+            offset: [0, 12], 
           },
         },
       ],
+      // SX prop to add space INSIDE the tooltip bubble
+      // This will be merged with the styles from CustomizedSmallTooltip
+      sx: {
+        // This pushes the text down from the top edge of the bubble
+        paddingTop: '8px', 
+      },
     }}
   >
     <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
