@@ -532,14 +532,7 @@ export default function GenerateForm({
       variant="small"
       placement="bottom"
     >
-      {/* 
-        This Box becomes the stable anchor for the Tooltip.
-        The Tooltip wraps this Box. The Box wraps the AudioSwitch.
-        This isolates the complex AudioSwitch from the Tooltip's logic.
-      */}
-      <Box component="span" sx={{ display: 'inline-block' }}>
         <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
-      </Box>
     </CustomTooltip>
   )}
   
