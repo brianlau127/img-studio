@@ -525,7 +525,33 @@ export default function GenerateForm({
         : ''
     }
   />
+
   
+{currentModel === 'veo-3.0-generate-preview' && (
+
+  <CustomTooltip
+    title="Add audio to your video"
+    variant="small"
+    placement="bottom"
+    
+    // THIS IS THE DEFINITIVE FIX:
+    PopperProps={{
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            // [skidding, distance]
+            // skidding: moves the tooltip left/right (0 = no horizontal shift)
+            // distance: moves the tooltip away from the icon (e.g., 10px down)
+            offset: [0, 10], 
+          },
+        },
+      ],
+    }}
+  >
+    <AudioSwitch checked={isVideoWithAudio} onChange={handleVideoAudioCheck} />
+  </CustomTooltip>
+)
 
   {currentModel === 'veo-3.0-generate-preview' && (
   <Box sx={{ position: 'relative', top: '-10px' }}>
